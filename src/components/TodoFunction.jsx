@@ -6,6 +6,7 @@ const TodoFunction = ({
 	removingTodo,
 	markDoneTodo,
 	billableTodo,
+	time,
 }) => {
 	const [editTableText, setEditTableText] = useState(todos.text);
 
@@ -26,29 +27,27 @@ const TodoFunction = ({
 	};
 	return (
 		<>
-			<div className=' mx-14 p-3'>
-				<div className='flex justify-between bg-red-500 items-center '>
+			<div className=' mx-10 p-4'>
+				<div className='flex px-8 py-4 justify-between bg-[#1d3557] text-[#f1faee] items-center rounded-lg '>
 					<input
 						value={editTableText}
 						onChange={inputHandler}
-						className={` pl-5 bg-red-500 ${
-							todos.isCompleted ? ' text-slate-200 line-through' : null
+						className={`bg-[#1d3557] text-[#f1faee] ${
+							todos.isCompleted ? ' text-green-500 line-through' : null
 						}`}
 					/>
-					<div className='mx-3  p-2 flex'>
-						<Stopwatch />
+					<div className='mx-3 gap-4  flex '>
+						<Stopwatch index={index} />
 						<button
-							className={` pl-5 bg-red-500 mx-3 ${
-								todos.isBillable ? ' text-blue-200 ' : null
-							}`}
+							className={`   ${todos.isBillable ? ' text-blue-200 ' : null}`}
 							onClick={billableTodoButton}>
 							$
 						</button>
-						<button className='mr-3 ' onClick={markDoneTodoButton}>
+						<button className=' ' onClick={markDoneTodoButton}>
 							<i className='fa-solid fa-check'></i>
 						</button>
-						<button className=' self-end' onClick={removeTodoButton}>
-							<i className='fa-solid fa-trash-can'></i>
+						<button className=' ' onClick={removeTodoButton}>
+							<i className='fa-solid fa-trash-can text-red-600 hover:text-red-400'></i>
 						</button>
 					</div>
 				</div>

@@ -18,7 +18,7 @@ const FormInput = ({ addingTodo }) => {
 	return (
 		<>
 			<form onSubmit={formSubmitHandler}>
-				<div className='flex justify-around items-center mx-10'>
+				<div className='flex justify-around items-center mx-14'>
 					<input
 						className=' form-control block
               w-2/3
@@ -40,10 +40,10 @@ const FormInput = ({ addingTodo }) => {
 						onChange={inputHandler}
 						placeholder='Add New Task'
 					/>
-					<span className='inline-block px-6 py-2 bg-blue-600 text-white font-medium text-xl leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out'>
-						$
-					</span>
-					<h1 className='font-bold'>00:00:00</h1>
+					<div className='flex items-center gap-10 text-2xl'>
+						<span className=' font-bold text-blue-500'>$</span>
+						<h1 className='font-semibold'>00:00:00</h1>
+					</div>
 				</div>
 			</form>
 		</>

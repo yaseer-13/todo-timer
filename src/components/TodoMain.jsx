@@ -35,20 +35,23 @@ const TodoMain = () => {
 
 	return (
 		<>
-			<h1 className='text-3xl text-center font-bold my-4'>Task Manger</h1>
+			<h1 className='text-5xl text-center font-bold py-4 '>Task Manager</h1>
 			<FormInput addingTodo={addingTodo} />
-			{todos.map((todos, index) => (
-				<span key={todos + index} className='text-2xl'>
-					<TodoFunction
-						index={index}
-						todos={todos}
-						markDoneTodo={markDoneTodo}
-						billableTodo={billableTodo}
-						removingTodo={removingTodo}
-						setTodos={setTodos}
-					/>
-				</span>
-			))}
+
+			<div className=' flex flex-col m-10 py-5 bg-[#a8dadc] rounded-lg'>
+				<h3 className='text-3xl mx-20 text-start font-semibold  '>Today</h3>
+				{todos.map((todos, index) => (
+					<span key={todos + index} className='text-2xl'>
+						<TodoFunction
+							index={index}
+							todos={todos}
+							markDoneTodo={markDoneTodo}
+							billableTodo={billableTodo}
+							removingTodo={removingTodo}
+						/>
+					</span>
+				))}
+			</div>
 		</>
 	);
 };

@@ -4,6 +4,7 @@ const Stopwatch = () => {
 	const [time, setTime] = useState(0);
 	const [running, setRunning] = useState(false);
 	const [count, setCount] = useState(0);
+
 	const handleClick = () => {
 		setRunning((prevState) => !prevState);
 		setCount((prevState) => prevState + 1);
@@ -19,8 +20,9 @@ const Stopwatch = () => {
 		}
 		return () => clearInterval(interval);
 	}, [running]);
+
 	return (
-		<div className='stopwatch flex gap-3'>
+		<div className='stopwatch flex gap-5'>
 			{console.log(count)}
 			<div className='numbers'>
 				<span>{('0' + Math.floor((time / 360000) % 60)).slice(-2)}:</span>
